@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+option csharp_namespace = "BuildingBlocks.Grpc";
+
+package ordering;
+
+// Ordering Service - provides order information
+service OrderingGrpc {
+    // Get order by ID
+    rpc GetOrderById(GetOrderRequest) returns (OrderResponse);
+    
+    // Get orders by user ID
+    rpc GetUserOrders(GetUserOrdersRequest) returns (OrdersResponse);
+    
+    // Check if a product exists in any active (non-delivered, non-cancelled) orders
+    // Used by Catalog Service before deleting a product (US-A11)
+    rpc CheckProductInActiveOrders(CheckProductRequest) returns (CheckProductResponse);
+}
+
+message CheckProductRequest {
+    int32 product_id = 1;
+}
+
+message CheckProductResponse {
+    bool success = 1;
+    bool has_active_orders = 2;
+    int32 active_order_count = 3;
+    string message = 4;
+}
+
+message GetOrderRequest {
+    int32 order_id = 1;
+}
+
+message GetUserOrdersRequest {
+    string user_id = 1;
+}
+
+message OrderResponse {
+    bool success = 1;
+    string error_message = 2;
+    OrderDto order = 3;
+}
+
+message OrdersResponse {
+    bool success = 1;
+    string error_message = 2;
+    repeated OrderDto orders = 3;
+}
+
+message OrderDto {
+    int32 id = 1;
+    string user_id = 2;
+    string status = 3;
+    double total_amount = 4;
+    int64 created_at_ticks = 5;
+    repeated OrderItemDto items = 6;
+}
+
+message OrderItemDto {
+    int32 product_id = 1;
+    string product_name = 2;
+    int32 quantity = 3;
+    double unit_price = 4;
+}

@@ -1,0 +1,95 @@
+syntax = "proto3";
+
+option csharp_namespace = "BuildingBlocks.Grpc";
+
+package catalog;
+
+// Contract between ERP / Catalog (server) and any external E-Commerce client (Erp.Grpc.Client SDK).
+service CatalogGrpc {
+  rpc GetProduct (GetProductRequest) returns (ProductResponse);
+  rpc GetProductsByIds (GetProductsByIdsRequest) returns (ProductsResponse);
+  rpc GetBranchProducts (GetBranchProductsRequest) returns (BranchProductsResponse);
+  rpc ValidateStock (ValidateStockRequest) returns (ValidateStockResponse);
+}
+
+message GetProductRequest {
+  int32 product_id = 1;
+}
+
+message GetProductsByIdsRequest {
+  repeated int32 product_ids = 1;
+}
+
+message GetBranchProductsRequest {
+  int32 branch_id = 1;
+}
+
+message ValidateStockRequest {
+  repeated StockItem items = 1;
+  int32 warehouse_id = 2;
+}
+
+message StockItem {
+  int32 product_id = 1;
+  int32 quantity   = 2;
+}
+
+message ProductResponse {
+  bool          success       = 1;
+  string        error_message = 2;
+  ProductProto  product       = 3;
+}
+
+message ProductsResponse {
+  bool                   success       = 1;
+  string                 error_message = 2;
+  repeated ProductProto  products      = 3;
+}
+
+message BranchProductsResponse {
+  bool                        success       = 1;
+  string                      error_message = 2;
+  repeated BranchProductProto products      = 3;
+}
+
+message ValidateStockResponse {
+  bool                       is_valid    = 1;
+  repeated StockValidation   validations = 2;
+}
+
+message StockValidation {
+  int32  product_id       = 1;
+  string product_name     = 2;
+  bool   is_available     = 3;
+  int32  available_stock  = 4;
+  int32  requested        = 5;
+  string error_message    = 6;
+}
+
+message ProductProto {
+  int32   id               = 1;
+  string  name             = 2;
+  string  description      = 3;
+  double  price            = 4;
+  double  discounted_price = 5;
+  double  tax              = 6;
+  double  final_price      = 7;
+  bool    in_stock         = 8;
+  int32   stock_quantity   = 9;
+  string  brand_name       = 10;
+  string  category_name    = 11;
+  string  image_url        = 12;
+  bool    is_available     = 13;
+  bool    has_discount     = 14;
+}
+
+message BranchProductProto {
+  int32   product_id                = 1;
+  string  name                      = 2;
+  string  product_code              = 3;
+  double  price                     = 4;
+  double  final_price               = 5;
+  bool    has_discount              = 6;
+  int32   total_available_in_branch = 7;
+  string  image_url                 = 8;
+}

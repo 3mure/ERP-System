@@ -1,0 +1,63 @@
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build
+bin/
+obj/
+
+# EF migrations/SQLite/Local DBs
+*.db
+*.db-shm
+*.db-wal
+**/CodeChunks.db
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+packages/
+
+# Logs
+logs/
+*.log
+
+# Secret files
+secrets.json
+appsettings.*.Secrets.json
+
+# Dotnet
+project.lock.json
+
+# GitHub Copilot indices / temporary files
+copilot-chat/**
+CopilotIndices.*
+
+# Docker
+docker-compose.*
+
+# VS Code
+.vscode/
+
+# Rider caches
+.idea/
+
+# Ignore user-specific files created by Visual Studio Team Services / extensions
+*.vsix
+
+# Ignore NuGet package folders
+**/packages/
+
+# Ignore publish output
+publish/
+
+# Ignore JetBrains Rider caches
+*.sln.iml
+
+# Add any generated or local-only files below
+
+# End of file
