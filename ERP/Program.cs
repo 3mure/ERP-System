@@ -17,6 +17,7 @@ using Microsoft.OpenApi.Models;
 using Serilog;
 using Serilog.Events;
 using System.Reflection;
+using System.Security.Authentication;
 using System.Text;
 // PromotionGrpcService should be in Catalog_Service.GrpcServices namespace
 namespace Catalog_Service
@@ -150,6 +151,8 @@ namespace Catalog_Service
                     x.AddConsumer<CommitStockConsumer>();
                     x.AddConsumer<PaymentSucceededStockConsumer>();
                     x.AddConsumer<OrderCreatedSalesOrderConsumer>();
+                    x.AddConsumer<LoyaltyUpdatedConsumer>();
+                    x.AddConsumer<ReturnProcessedConsumer>();
                     x.AddConsumer<Catalog_Service.Features.ProductsFeature.StockManagement.OrderDeliveredConsumer>();
                     x.AddConsumer<Catalog_Service.Features.ProductsFeature.StockManagement.PaymentFailedConsumer>();
                     x.AddConsumer<Catalog_Service.Features.ProductsFeature.StockManagement.OrderCancelledConsumer>();
@@ -166,12 +169,35 @@ namespace Catalog_Service
                     x.UsingRabbitMq((context, cfg) =>
                     {
                         var rabbit = context.GetRequiredService<Microsoft.Extensions.Options.IOptions<RabbitMqOptions>>().Value;
+                        var username = string.IsNullOrWhiteSpace(rabbit.User) ? rabbit.Username : rabbit.User;
+                        var password = string.IsNullOrWhiteSpace(rabbit.Pass) ? rabbit.Password : rabbit.Pass;
+                        var virtualHost = string.IsNullOrWhiteSpace(rabbit.VHost) ? rabbit.VirtualHost : rabbit.VHost;
 
-                        cfg.Host(rabbit.Host, rabbit.VirtualHost, h =>
+                        if (!string.IsNullOrWhiteSpace(rabbit.Uri))
                         {
-                            h.Username(rabbit.Username);
-                            h.Password(rabbit.Password);
-                        });
+                            cfg.Host(new Uri(rabbit.Uri), h =>
+                            {
+                                if (!string.IsNullOrWhiteSpace(username)) h.Username(username);
+                                if (!string.IsNullOrWhiteSpace(password)) h.Password(password);
+                            });
+                        }
+                        else
+                        {
+                            cfg.Host(rabbit.Host, virtualHost, h =>
+                            {
+                                h.Username(username);
+                                h.Password(password);
+
+                                if (rabbit.UseSsl || rabbit.Port == 5671)
+                                {
+                                    h.UseSsl(s =>
+                                    {
+                                        s.Protocol = SslProtocols.Tls12;
+                                        s.ServerName = rabbit.Host;
+                                    });
+                                }
+                            });
+                        }
 
                         // Listen to an existing (pre-created) exchange/queue if configured.
                         // This is intentionally explicit so we don't rely on MassTransit's auto-topology.
@@ -180,6 +206,7 @@ namespace Catalog_Service
                             cfg.ReceiveEndpoint(rabbit.OrderCreatedQueue, e =>
                             {
                                 e.ConfigureConsumeTopology = false;
+                                e.UseRawJsonDeserializer();
 
                                 if (!string.IsNullOrWhiteSpace(rabbit.OrderCreatedExchange))
                                 {
@@ -198,12 +225,47 @@ namespace Catalog_Service
                             });
                         }
 
+                        if (!string.IsNullOrWhiteSpace(rabbit.LoyaltyUpdatedQueue))
+                        {
+                            cfg.ReceiveEndpoint(rabbit.LoyaltyUpdatedQueue, e =>
+                            {
+                                e.ConfigureConsumeTopology = false;
+                                e.UseRawJsonDeserializer();
+                                e.ConfigureConsumer<LoyaltyUpdatedConsumer>(context);
+                            });
+                        }
+
+                        if (!string.IsNullOrWhiteSpace(rabbit.ReturnProcessedQueue))
+                        {
+                            cfg.ReceiveEndpoint(rabbit.ReturnProcessedQueue, e =>
+                            {
+                                e.ConfigureConsumeTopology = false;
+                                e.UseRawJsonDeserializer();
+                                e.ConfigureConsumer<ReturnProcessedConsumer>(context);
+                            });
+                        }
+
+                        if (!string.IsNullOrWhiteSpace(rabbit.StockDeductedQueue))
+                        {
+                            cfg.ReceiveEndpoint(rabbit.StockDeductedQueue, e =>
+                            {
+                                e.ConfigureConsumeTopology = false;
+                                e.UseRawJsonDeserializer();
+                                e.ConfigureConsumer<CommitStockConsumer>(context);
+                            });
+                        }
+
                         cfg.ConfigureEndpoints(context);
                     });
                 });
 
                 builder.Services.AddOptions<MassTransitHostOptions>()
-                    .Configure(o => o.WaitUntilStarted = true);
+                    .Configure(o =>
+                    {
+                        // Do not block ASP.NET startup waiting for broker connection.
+                        // This prevents IIS/Azure startup timeout (HTTP 500.37) when RabbitMQ is slow/unreachable.
+                        o.WaitUntilStarted = false;
+                    });
 
                 // -------------------------------------------------------------------------------------
                 // API Security & Configuration
