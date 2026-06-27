@@ -1,4 +1,4 @@
-﻿using Catalog_Service.Features.CategoriesFeature.GetAllCategories;
+using Catalog_Service.Features.CategoriesFeature.GetAllCategories;
 using Catalog_Service.Features.OccasionsFeature.UpdateOccasion;
 using Catalog_Service.Features.Shared;
 using MediatR;

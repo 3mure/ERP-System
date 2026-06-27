@@ -1,4 +1,4 @@
-﻿namespace Auth.Data.Configurations
+namespace Auth.Data.Configurations
 {
     using global::Auth.Models;
     using Microsoft.EntityFrameworkCore;

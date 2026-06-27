@@ -1,4 +1,4 @@
-﻿using Auth_Service.Features.Shared;
+using Auth_Service.Features.Shared;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Caching.Memory;

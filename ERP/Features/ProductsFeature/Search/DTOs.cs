@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.ProductsFeature.Search
+namespace Catalog_Service.Features.ProductsFeature.Search
 {
     public class DTOs
     {

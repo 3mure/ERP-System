@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog_Service.Features.Inventory.GetInventoryProducts

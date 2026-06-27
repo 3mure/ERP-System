@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Auth.Contarcts;
 using Auth_Service.Features.Shared;
 

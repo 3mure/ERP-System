@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.ProductsFeature.GetAllProducts
+namespace Catalog_Service.Features.ProductsFeature.GetAllProducts
 {
     public class Handlers
     {

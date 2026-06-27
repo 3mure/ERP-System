@@ -1,4 +1,4 @@
-﻿using Catalog_Service.Features.OverviewKpis.GetNetProfit;
+using Catalog_Service.Features.OverviewKpis.GetNetProfit;
 using Dashboard_Service.Features.OverviewKpis;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;

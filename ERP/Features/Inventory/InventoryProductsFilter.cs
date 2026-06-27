@@ -1,4 +1,4 @@
-﻿using Catalog_Service.Features.Inventory.GetInventoryProducts;
+using Catalog_Service.Features.Inventory.GetInventoryProducts;
 
 namespace Catalog_Service.Features.Inventory
 {

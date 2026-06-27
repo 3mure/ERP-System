@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.Inventory.TransferStock
+namespace Catalog_Service.Features.Inventory.TransferStock
 {
     public record TransferStockResult(
      bool Success,

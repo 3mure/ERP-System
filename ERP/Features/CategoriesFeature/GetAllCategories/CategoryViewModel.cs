@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.CategoriesFeature.GetAllCategories
+namespace Catalog_Service.Features.CategoriesFeature.GetAllCategories
 {
     public class CategoryViewModel
     {

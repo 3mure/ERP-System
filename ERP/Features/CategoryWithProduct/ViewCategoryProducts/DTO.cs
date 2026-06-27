@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.CategoryWithProduct.ViewCategoryProducts
+namespace Catalog_Service.Features.CategoryWithProduct.ViewCategoryProducts
 {
     public class DTO
     {

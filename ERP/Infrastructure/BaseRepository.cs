@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.Interfaces;
+using BuildingBlocks.Interfaces;
 using BuildingBlocks.SharedEntities;
 using Catalog_Service.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;

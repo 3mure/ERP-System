@@ -1,4 +1,4 @@
-﻿namespace Auth.Features.Auth.Login
+namespace Auth.Features.Auth.Login
 {
     public class LoginResponse
     {

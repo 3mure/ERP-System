@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.Customers.CreateCustomer
+namespace Catalog_Service.Features.Customers.CreateCustomer
 {
     public class AccountDetails
     {

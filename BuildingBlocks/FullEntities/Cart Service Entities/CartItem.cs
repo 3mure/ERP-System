@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.SharedEntities;
+using BuildingBlocks.SharedEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;

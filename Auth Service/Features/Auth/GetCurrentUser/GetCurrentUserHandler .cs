@@ -1,4 +1,4 @@
-﻿using Auth.Features.Auth.GetCurrentUser;
+using Auth.Features.Auth.GetCurrentUser;
 using Auth.Models;
 using Auth_Service.Features.Shared;
 using MediatR;

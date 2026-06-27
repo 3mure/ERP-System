@@ -1,4 +1,4 @@
-﻿using Auth.Contarcts;
+using Auth.Contarcts;
 
 namespace Auth.Services
 {

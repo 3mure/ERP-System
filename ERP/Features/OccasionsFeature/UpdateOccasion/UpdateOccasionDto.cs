@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.OccasionsFeature.UpdateOccasion
+namespace Catalog_Service.Features.OccasionsFeature.UpdateOccasion
 {
     public class UpdateOccasionDto
     {

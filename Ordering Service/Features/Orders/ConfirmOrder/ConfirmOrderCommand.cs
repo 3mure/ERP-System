@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Ordering_Service.Features.Orders.ConfirmOrder.ViewModels;
 using Ordering_Service.Features.Shared;
 

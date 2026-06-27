@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.SharedEntities;
+using BuildingBlocks.SharedEntities;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Catalog_Service.Entities

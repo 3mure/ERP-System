@@ -1,4 +1,4 @@
-﻿namespace BuildingBlocks.IntegrationEvents
+namespace BuildingBlocks.IntegrationEvents
 {
     public record ProductLowStockEvent
     {

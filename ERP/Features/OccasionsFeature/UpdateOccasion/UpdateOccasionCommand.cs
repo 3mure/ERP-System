@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.Interfaces;
+using BuildingBlocks.Interfaces;
 using Catalog_Service.Entities;
 using Catalog_Service.Features.Shared;
 using MediatR;

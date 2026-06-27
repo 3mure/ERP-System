@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.ProductsFeature.ProductExist
+namespace Catalog_Service.Features.ProductsFeature.ProductExist
 {
     public class ProductExistsDto
     {

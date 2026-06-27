@@ -1,4 +1,4 @@
-﻿namespace Auth.Features.Auth.Logout
+namespace Auth.Features.Auth.Logout
 {
     public class LogoutResponse
     {

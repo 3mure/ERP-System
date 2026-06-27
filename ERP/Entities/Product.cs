@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.FullEntities.Catalog_Service_Entities;
+using BuildingBlocks.FullEntities.Catalog_Service_Entities;
 using BuildingBlocks.FullEntities.Catalog_Service_Entities.Occasions;
 using BuildingBlocks.SharedEntities;
 using Catalog_Service.Entities.Retail;

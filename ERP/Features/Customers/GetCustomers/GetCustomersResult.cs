@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.Customers.GetCustomers
+namespace Catalog_Service.Features.Customers.GetCustomers
 {
     public record GetCustomersResult(
         List<CustomerRowDto> Data,

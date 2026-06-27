@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.Interfaces;
+using BuildingBlocks.Interfaces;
 using FluentValidation;
 using MediatR;
 using Catalog_Service.Features.Shared;

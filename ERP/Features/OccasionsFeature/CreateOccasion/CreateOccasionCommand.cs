@@ -1,4 +1,4 @@
-﻿using Catalog_Service.Features.Shared;
+using Catalog_Service.Features.Shared;
 using Humanizer;
 using MediatR;
 

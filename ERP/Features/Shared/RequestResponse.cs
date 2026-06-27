@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.Shared
+namespace Catalog_Service.Features.Shared
 {
     public record RequestResponse<T>(
        T? Data,

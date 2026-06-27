@@ -1,4 +1,4 @@
-﻿namespace Auth.Features.Auth.Register
+namespace Auth.Features.Auth.Register
 {
     public record RegisterResponse(
          bool Success,

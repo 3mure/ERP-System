@@ -1,4 +1,4 @@
-﻿namespace Ordering_Service.Features.Orders.ConfirmOrder.ViewModels
+namespace Ordering_Service.Features.Orders.ConfirmOrder.ViewModels
 {
     public class ConfirmOrderViewModel
     {

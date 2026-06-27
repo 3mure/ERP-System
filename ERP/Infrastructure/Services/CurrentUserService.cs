@@ -1,4 +1,4 @@
-﻿using BuildingBlocks.Interfaces;
+using BuildingBlocks.Interfaces;
 using System.Security.Claims;
 
 namespace Catalog_Service.Infrastructure.Services

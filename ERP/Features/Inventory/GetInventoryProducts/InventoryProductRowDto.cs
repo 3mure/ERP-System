@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.Inventory.GetInventoryProducts
+namespace Catalog_Service.Features.Inventory.GetInventoryProducts
 {
     // <summary>
     /// One row in the inventory products table — all 9 columns.

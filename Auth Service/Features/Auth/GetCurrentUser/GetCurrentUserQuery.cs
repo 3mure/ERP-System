@@ -1,4 +1,4 @@
-﻿using Auth.Features.Auth.Login;
+using Auth.Features.Auth.Login;
 using Auth_Service.Features.Shared;
 using MediatR;
 

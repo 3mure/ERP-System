@@ -1,4 +1,4 @@
-﻿using Catalog_Service.Features.Inventory.ExportInventoryProduct;
+using Catalog_Service.Features.Inventory.ExportInventoryProduct;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

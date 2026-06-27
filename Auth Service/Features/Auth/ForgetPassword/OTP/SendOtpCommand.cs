@@ -1,4 +1,4 @@
-﻿using Auth_Service.Features.Shared;
+using Auth_Service.Features.Shared;
 using MediatR;
 
 public record SendOtpCommand(string Email)

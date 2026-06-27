@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 
 namespace Catalog_Service.Features.OccasionsFeature.CreateOccasion
 {

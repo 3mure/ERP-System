@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.ProductsFeature.GetProductDetails
+namespace Catalog_Service.Features.ProductsFeature.GetProductDetails
 {
     public class ProductDetailDto
     {

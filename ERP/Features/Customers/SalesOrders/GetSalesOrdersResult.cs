@@ -1,4 +1,4 @@
-﻿using Catalog_Service.Features.Customers.GetCustomers;
+using Catalog_Service.Features.Customers.GetCustomers;
 
 namespace Catalog_Service.Features.Customers.SalesOrders
 {

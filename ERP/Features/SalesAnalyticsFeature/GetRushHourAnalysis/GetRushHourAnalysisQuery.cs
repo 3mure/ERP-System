@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 
 namespace Catalog_Service.Features.SalesAnalyticsFeature.GetRushHourAnalysis
 {

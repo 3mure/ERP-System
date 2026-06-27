@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.ProductPerformanceAndGetLowMovementStock.GetTopSellingProducts
+namespace Catalog_Service.Features.ProductPerformanceAndGetLowMovementStock.GetTopSellingProducts
 {
     public record TopSellingProductDto(
         string Name,

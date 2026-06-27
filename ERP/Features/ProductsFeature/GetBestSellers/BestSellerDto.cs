@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.ProductsFeature.GetBestSellers
+namespace Catalog_Service.Features.ProductsFeature.GetBestSellers
 {
     public record BestSellerDto
     {

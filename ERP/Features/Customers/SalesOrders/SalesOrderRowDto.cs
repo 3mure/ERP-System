@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.Customers.SalesOrders
+namespace Catalog_Service.Features.Customers.SalesOrders
 {
     public record SalesOrderRowDto(
      string OrderId,        // "ORD-001"

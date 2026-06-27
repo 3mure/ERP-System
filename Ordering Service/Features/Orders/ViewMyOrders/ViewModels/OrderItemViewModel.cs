@@ -1,4 +1,4 @@
-﻿namespace Ordering_Service.Features.Orders.ViewMyOrders.ViewModels
+namespace Ordering_Service.Features.Orders.ViewMyOrders.ViewModels
 {
     public class OrderItemViewModel
     {

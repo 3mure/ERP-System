@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.OccasionsFeature
+namespace Catalog_Service.Features.OccasionsFeature
 {
     public class ActivateDeactivateOcassionDto
     {

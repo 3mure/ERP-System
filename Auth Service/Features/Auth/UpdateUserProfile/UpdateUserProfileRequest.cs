@@ -1,4 +1,4 @@
-﻿namespace Auth.Features.Auth.UpdateUserProfile
+namespace Auth.Features.Auth.UpdateUserProfile
 {
     public record UpdateUserProfileRequest
  (

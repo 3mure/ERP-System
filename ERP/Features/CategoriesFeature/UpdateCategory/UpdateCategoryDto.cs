@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.CategoriesFeature.UpdateCategory
+namespace Catalog_Service.Features.CategoriesFeature.UpdateCategory
 {
     public class UpdateCategoryDto
     {

@@ -1,4 +1,4 @@
-﻿namespace Auth_Service.Features.Shared
+namespace Auth_Service.Features.Shared
 {
     public class PaginatedResult<T>
     {

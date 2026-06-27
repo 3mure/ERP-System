@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.ProductPerformanceAndGetLowMovementStock.GetLowMovementStock
+namespace Catalog_Service.Features.ProductPerformanceAndGetLowMovementStock.GetLowMovementStock
 {
     public record LowMovementStockDto(
     string Name,

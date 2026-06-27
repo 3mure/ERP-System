@@ -1,4 +1,4 @@
-﻿using Auth.Contarcts;
+using Auth.Contarcts;
 using Auth.Data;
 using Auth.Models;
 using Auth_Service.Features.Shared;

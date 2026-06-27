@@ -1,4 +1,4 @@
-﻿using Auth.Features.Auth.UpdateUserProfile;
+using Auth.Features.Auth.UpdateUserProfile;
 using Auth_Service.Features.Shared;
 using MediatR;
 

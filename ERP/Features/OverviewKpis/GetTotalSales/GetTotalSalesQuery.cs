@@ -1,4 +1,4 @@
-﻿using Catalog_Service.Features.OverviewKpis.GetNetProfit;
+using Catalog_Service.Features.OverviewKpis.GetNetProfit;
 using MediatR;
 
 namespace Catalog_Service.Features.OverviewKpis.GetTotalSales

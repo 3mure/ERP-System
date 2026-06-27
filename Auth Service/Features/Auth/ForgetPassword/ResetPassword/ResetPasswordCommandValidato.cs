@@ -1,4 +1,4 @@
-﻿using FluentValidation;
+using FluentValidation;
 using Auth.Features.Auth.ChangePassword;
 
 namespace Auth.Features.Auth.ForgetPassword.ResetPassword

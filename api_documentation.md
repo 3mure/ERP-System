@@ -1,4 +1,4 @@
-﻿# Comprehensive API Documentation List
+# Comprehensive API Documentation List
 
 **Base URL:** `http://72.61.102.216:8888`
 

@@ -1,4 +1,4 @@
-﻿using Dashboard_Service.Features.OverviewKpis;
+using Dashboard_Service.Features.OverviewKpis;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 

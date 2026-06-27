@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.RateDeliveredItem
+namespace Catalog_Service.Features.RateDeliveredItem
 {
     public class AddReviewDto
     {

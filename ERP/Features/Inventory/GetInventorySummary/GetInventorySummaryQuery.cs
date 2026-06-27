@@ -1,4 +1,4 @@
-﻿using Catalog_Service.Features.ProductsFeature.GetInventorySummary;
+using Catalog_Service.Features.ProductsFeature.GetInventorySummary;
 using MediatR;
 
 namespace Catalog_Service.Features.Inventory.GetInventorySummary

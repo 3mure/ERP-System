@@ -1,4 +1,4 @@
-﻿using MediatR;
+using MediatR;
 using Catalog_Service.Features.Shared;
 
 namespace Catalog_Service.Features.ProductsFeature.GetBestSellers

@@ -1,4 +1,4 @@
-﻿namespace Auth.Features.Auth.ChangePassword
+namespace Auth.Features.Auth.ChangePassword
 {
     public record ChangePasswordResponse(
        bool Success,

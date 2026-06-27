@@ -1,4 +1,4 @@
-﻿namespace Auth.Contarcts
+namespace Auth.Contarcts
 {
     public interface IMailKitEmailService
     {

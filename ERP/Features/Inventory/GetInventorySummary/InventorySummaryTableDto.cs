@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.Inventory.GetInventorySummary
+namespace Catalog_Service.Features.Inventory.GetInventorySummary
 {
     public record InventorySummaryTableDto(
     string TotalStockQuantity,  // "14,500"

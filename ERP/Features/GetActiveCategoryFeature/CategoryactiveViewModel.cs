@@ -1,4 +1,4 @@
-﻿namespace Catalog_Service.Features.CategoriesFeature.GetActiveCategoryFeature
+namespace Catalog_Service.Features.CategoriesFeature.GetActiveCategoryFeature
 {
     public class CategoryactiveViewModel
     {
